@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { showTickets } = require("../services/ticketservs");
+const { showTickets } = require("../services/ticketServs");
 
 router.get("/getTickets", async function (req, res){
     try {

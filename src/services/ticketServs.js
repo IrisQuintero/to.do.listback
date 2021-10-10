@@ -1,4 +1,4 @@
-const { showTicketsModel } = require("../models/ticketsModel");
+const { showTicketsModel } = require("../models/ticketsModels");
 
 async function showTickets(){
     try {

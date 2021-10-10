@@ -1,4 +1,4 @@
-const { ticketsSchema } = require("../schemas/ticketschemas/ticketschemas");
+const { ticketsSchema } = require("../schemas/tickestSchemas/ticketSchemas");
 const mongoose = require("mongoose");
 const ticketModel = mongoose.model("ticketsdb", ticketsSchema);
 
