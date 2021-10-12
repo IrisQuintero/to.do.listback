@@ -6,6 +6,7 @@ const ticketModel = mongoose.model("ticketsdb", ticketsSchema);
 //quiero que esta función me traiga la lista completa de la base de datos y la muestre en pantalla
 
  async function showTicketsModel(){
+     console.log("showTicketsModel");
      return await ticketModel.find();
      
  };

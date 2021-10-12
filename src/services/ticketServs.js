@@ -2,6 +2,7 @@ const { showTicketsModel, selecTicketsModel } = require("../models/ticketsModels
 
 async function showTickets(){
     try {
+        console.log("showTickets")
         return await showTicketsModel()
     } catch (error) {
         throw new Error("Tickets db not found");

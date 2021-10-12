@@ -13,6 +13,7 @@ const { showTickets, selecTicket } = require("../services/ticketServs");
 
 router.get("/getTickets", async function (req, res){
     try {
+        console.log("getTickets")
         const data = await showTickets()
         res.send(data);
     } catch (error) {

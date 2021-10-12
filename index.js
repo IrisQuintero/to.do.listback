@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 
 const ticketsRoute = require("./src/api/ticketsApi");
 
-const uri = "mongodb+srv://Iris:1234@ticketsdbcluster.nzzjm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = "mongodb+srv://Iris:1234@ticketsdbcluster.nzzjm.mongodb.net/ticketsdb?retryWrites=true&w=majority";
 mongoose.connect(uri);
 
 const database = mongoose.connection;
