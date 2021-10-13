@@ -1,13 +1,18 @@
-const { ticketsSchema } = require("../schemas/tickestSchemas/ticketSchemas");
+const { ticketsSchema } = require("../schemas/ticketSchemas/ticketSchemas");
 const mongoose = require("mongoose");
-const ticketModel = mongoose.model("ticketsdb", ticketsSchema);
+const ticketModel = mongoose.model("ticketsdbs", ticketsSchema);
 
 
 //quiero que esta función me traiga la lista completa de la base de datos y la muestre en pantalla
 
  async function showTicketsModel(){
-     console.log("showTicketsModel");
-     return await ticketModel.find();
+     try {
+         return await ticketModel.find()
+     } catch (error) {
+        console.log(error);
+     }
+     
+    
      
  };
 
@@ -18,7 +23,7 @@ const ticketModel = mongoose.model("ticketsdb", ticketsSchema);
 
 // quiero que esta otra me cree una tarea nueva
 
-async function createNewTicketOnDB({ticketsData}){
+async function createNewTicketOnDB(ticketsData){
       console.log(ticketsData)
       return ticketModel.create(ticketsData);
  };

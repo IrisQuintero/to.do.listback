@@ -6,7 +6,8 @@ const mongoose = require("mongoose");
 
 const ticketsRoute = require("./src/api/ticketsApi");
 
-const uri = "mongodb+srv://Iris:1234@ticketsdbcluster.nzzjm.mongodb.net/ticketsdb?retryWrites=true&w=majority";
+
+const uri = "mongodb+srv://Iris:1234@ticketsdbcluster.nzzjm.mongodb.net/ticketdbcluster?retryWrites=true&w=majority";
 mongoose.connect(uri);
 
 const database = mongoose.connection;
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/tickets", ticketsRoute);
+// app.use("/users", )
 
  app.listen(port,() => {
  console.log(`Example app listening at http://locslhost:${port}`);

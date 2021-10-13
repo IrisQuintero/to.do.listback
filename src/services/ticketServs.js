@@ -1,11 +1,10 @@
-const { showTicketsModel, selecTicketsModel } = require("../models/ticketsModels");
+const { showTicketsModel, selecTicketsModel, createNewTicketOnDB } = require("../models/ticketsModels");
 
 async function showTickets(){
     try {
-        console.log("showTickets")
-        return await showTicketsModel()
+       return await showTicketsModel()
     } catch (error) {
-        throw new Error("Tickets db not found");
+        throw new Error(error);
     }
 };
 
@@ -18,24 +17,10 @@ async function selecTicket(ticket){
     }
 };
 
-async function createNewTicket({ticketsData}){
+async function createNewTicket(ticketsData){
     try{
-     const newTicket = {
-        tema: ticketsData.tema,
-        detalleCaso: {nombreSolicitante: ticketsData.nombreSolicitante, contactoSolicitante:{
-            telefono: ticketsData.telefono, coreeo: ticketsData.correo},
-            curso: ticketsData.curso,
-            statusSolicitante: ticketsData.statusSolicitante,
-            descripcionCaso: ticketsData.descripciónCaso
-        },
-        statusCaso: ticketsData.statusCaso,
-        fechaYHora: ticketsData.fechaYHora,
-        asignado:{area: ticketsData.area,  idEncargado: ticketsData.area }
-    
-    };
-            
-    console.log(newTicket)
-    await createNewTicketOnDB({ticketsData : newTicket}); 
+     console.log(ticketsData)
+    return await createNewTicketOnDB(ticketsData); 
     
     }catch(error){
         throw new Error(error);
