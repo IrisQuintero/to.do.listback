@@ -26,7 +26,7 @@ async function createNewTicketOnDB(ticketsData) {
 
 async function updateTicketModel(ticket) {
   console.log(ticket + "modelo");
-  return await ticketModel.findByIdAndUpdate(ticket._id,{ tema:ticket.tema}, { new: true });
+  return await ticketModel.findByIdAndUpdate(ticket._id,{ fechaYHora:ticket.fechaYHora}, { new: true });
 }
 
 async function deleteTicketModel(ticket) {
