@@ -33,6 +33,7 @@ async function createNewTicket(ticketsData) {
 
 async function updateTicket(ticket) {
   try {
+    console.log(ticket)
     return await updateTicketModel(ticket);
   } catch (error) {
     throw new Error(error);

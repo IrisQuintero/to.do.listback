@@ -7,7 +7,7 @@ const ticketsSchema = new Schema({
     nombreSolicitante: String,
     contactoSolicitante: {
       telefono: Number,
-      coreeo: String,
+      correo: String,
     },
     curso: String,
     statusSolicitante: String,

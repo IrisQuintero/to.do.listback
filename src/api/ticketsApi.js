@@ -40,7 +40,7 @@ router.get("/getTicket/:id", async function (req, res) {
 router.post("/createTickets", async function (req, res) {
   try {
     let body = req.body;
-    console.log(body);
+    // console.log(body);
     const data = await createNewTicket(body);
     res.send(data);
   } catch (error) {
@@ -50,11 +50,11 @@ router.post("/createTickets", async function (req, res) {
 
 
 //Actualiza una tarea en la lista
-//falta corregir
 
 router.patch("/updateTicket", async function (req, res) {
   try {
     const ticket = req.body;
+    console.log(ticket)
     const data = await updateTicket(ticket);
     res.send(data + "Base de datos actualizada");
   } catch (error) {

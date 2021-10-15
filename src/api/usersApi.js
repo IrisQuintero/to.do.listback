@@ -16,12 +16,12 @@ router.get("/getUsers", async function (req, res) {
     const data = await showUsers();
     res.send(data);
   } catch (error) {
-    res.status(500).send("Error on get users data");
+    res.status(500).send(error);
   }
 });
 
 //muestra solo un usuario
-
+//falta corregir => este es el error 61675abc8d45ce3cad28589modelo
 router.get("/getUser/:id", async function (req, res) {
   try {
     const user = req.params.id;

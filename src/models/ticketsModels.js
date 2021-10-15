@@ -13,11 +13,11 @@ async function showTicketsModel() {
 }
 
 async function selecTicketsModel(ticket) {
-  console.log(ticket + "modelo");
+  //console.log(ticket + "modelo");
   return await ticketModel.findById(ticket);
 }
 
-// quiero que esta otra me cree una tarea nueva
+//quiero que esta otra me cree una tarea nueva
 
 async function createNewTicketOnDB(ticketsData) {
   console.log(ticketsData);
@@ -26,12 +26,12 @@ async function createNewTicketOnDB(ticketsData) {
 
 async function updateTicketModel(ticket) {
   console.log(ticket + "modelo");
-  return await ticketModel.findByIdAndUpdate(ticket.id, { new: true });
+  return await ticketModel.findByIdAndUpdate(ticket._id,{ tema:ticket.tema}, { new: true });
 }
 
 async function deleteTicketModel(ticket) {
   console.log(ticket);
-  return await ticketModel.findByIdAndDelete(ticket);
+  return await ticketModel.findByIdAndDelete(ticket._id);
 }
 
 module.exports = {

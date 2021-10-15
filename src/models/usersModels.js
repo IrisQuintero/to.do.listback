@@ -12,7 +12,7 @@ async function showUsersModel() {
 
 async function selectUsersModel(user){
   console.log(user + "modelo")
-  return await userModel.findById()
+  return await userModel.findById(user)
 };
 
 async function createNewUserOnDB(usersData) {
